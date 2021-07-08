@@ -11,7 +11,7 @@ npm i
 yarn
 ```
 
-2 - Firt command
+2 - Next command
 ```bash
 npm run dev
 # or
