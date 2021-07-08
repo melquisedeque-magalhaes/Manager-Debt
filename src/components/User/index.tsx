@@ -11,12 +11,12 @@ interface UserProps {
 
 export function User({ name, id }: UserProps) {
 
-  const { changeModal, openModal } = useModal()
+  const { setOpenModal, openModal } = useModal()
 
   const [ idUser, setIdUser ] = useState(0)
 
   function handleOpenModal(id: number){
-    changeModal(!openModal)
+    setOpenModal(!openModal)
     setIdUser(id)
   }
 

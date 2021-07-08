@@ -27,7 +27,7 @@ const customStyles = {
 
 export function ModalAddNewDebt({ isOpen, idUser }: ModalAddNewDebtProps){
 
-  const { changeModal } = useModal()
+  const { setOpenModal } = useModal()
 
   const [ nameDebt, setNameDebt ] = useState('')
   const [ valueDebt, setValueDebt ] = useState('')
@@ -41,7 +41,7 @@ export function ModalAddNewDebt({ isOpen, idUser }: ModalAddNewDebtProps){
       valueDebt
     })
 
-    changeModal(false)
+    setOpenModal(false)
   }
 
   return(
@@ -54,7 +54,7 @@ export function ModalAddNewDebt({ isOpen, idUser }: ModalAddNewDebtProps){
         className={styles.container}
       >
         <button 
-          onClick={() => changeModal(false)}
+          onClick={() => setOpenModal(false)}
           className={styles.buttonClose}
         >
           <FiX color="#fff" size={16} />
