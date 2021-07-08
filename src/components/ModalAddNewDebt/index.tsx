@@ -35,13 +35,24 @@ export function ModalAddNewDebt({ isOpen, idUser }: ModalAddNewDebtProps){
   async function handleRegisterDebt(event: FormEvent){
     event.preventDefault()
 
-    await axios.post('https://provadev.xlab.digital/api/v1/divida?uuid=0824f082-1321-4967-8075-4a8b0a5da387/dividas', {
-      idUser,
-      nameDebt,
-      valueDebt
-    })
+    try{
+      await axios.post('https://provadev.xlab.digital/api/v1/divida?uuid=0824f082-1321-4967-8075-4a8b0a5da387/dividas', {
+        idUser,
+        nameDebt,
+        valueDebt
+      })
 
-    setOpenModal(false)
+      setOpenModal(false)
+
+    }catch {
+
+      alert('Desculpe não foi possivel adicionar nova divida, por favor tente mais tarde!')
+      setNameDebt('')
+      setValueDebt('')
+      setOpenModal(false)
+
+    }    
+
   }
 
   return(
