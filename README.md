@@ -4,6 +4,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+1 - Firt command
+```bash
+npm i
+# or
+yarn
+```
+
+2 - Firt command
 ```bash
 npm run dev
 # or
